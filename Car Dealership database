@@ -1,0 +1,26 @@
+CREATE TABLE cars (id INTEGER PRIMARY KEY, model TEXT, color TEXT, year INTEGER, price INTEGER);
+
+INSERT INTO cars VALUES (1, 'Accord', 'blue', 1999, 10000);
+INSERT INTO cars VALUES (2, 'Ford', 'Red', 2001, 5000);
+INSERT INTO cars VALUES (3, 'Accord', 'Grey', 2004, 15000);
+INSERT INTO cars VALUES (4, 'Chevy', 'Black', 2008, 20000);
+INSERT INTO cars VALUES (5, 'Ferrari', 'Silver', 2017, 100000);
+INSERT INTO cars VALUES (6, 'Lamborghini', 'Green', 2015, 110000);
+INSERT INTO cars VALUES (7, 'Chevy', 'Pink', 2009, 40000);
+INSERT INTO cars VALUES (8, 'Audi', 'Blue', 2018, 70000);
+INSERT INTO cars VALUES (9, 'Altima', 'White', 2015, 30000);
+INSERT INTO cars VALUES (10, 'Audi', 'Black', 2011, 30000);
+INSERT INTO cars VALUES (11, 'Ferrari', 'Grey', 2018, 140000);
+INSERT INTO cars VALUES (12, 'Impola', 'Orange', 1964, 50000);
+INSERT INTO cars VALUES (13, 'Altima', 'Pink', 2002, 36000);
+INSERT INTO cars VALUES (14, 'Jeep', 'Grey', 2005, 20000);
+INSERT INTO cars VALUES (15, 'Cadillac', 'Brown', 2022, 80000);
+
+--selecting everything from my database
+SELECT * FROM cars;
+
+--show the data by price starting at most expensive
+SELECT * FROM cars ORDER BY price DESC;
+
+--adding up the price for every car in the inventory
+SELECT SUM(price) FROM cars;
