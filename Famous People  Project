@@ -1,0 +1,40 @@
+CREATE TABLE actor (id INTEGER PRIMARY KEY AUTOINCREMENT, first_name TEXT, last_name TEXT, age INTEGER);
+
+INSERT INTO actor VALUES (1, "Brad", "Pitt", 59);
+INSERT INTO actor VALUES (2, "Leonardo", "DiCaprio", 48);
+INSERT INTO actor VALUES (3, "Gary", "Oldman", 64);
+INSERT INTO actor VALUES (4, "Angelina", "Jolie", 47);
+INSERT INTO actor VALUES (5, "Emma", "Stone", 34);
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY AUTOINCREMENT, actor_id INTEGER, title TEXT, release_date INTEGER);
+
+INSERT INTO movies VALUES (1, 1, "Once Upon A Time In HollyWood", 2019);
+INSERT INTO movies VALUES (3, 2, "Wolf Of WallStreet", 2013);
+
+INSERT INTO movies VALUES (5, 3, "Leon", 1994);
+
+INSERT INTO movies VALUES (7, 4, "Maleficent", 2014);
+
+INSERT INTO movies VALUES (9, 5, "La La Land", 2016);
+
+
+
+SELECT * FROM actor;
+
+SELECT * FROM movies;
+
+SELECT actor.first_name, actor.last_name, movies.title
+FROM actor
+JOIN movies
+ON actor.id=movies.actor_id;
+
+SELECT *
+FROM actor
+JOIN movies
+ON actor.id=movies.actor_id
+WHERE actor.first_name LIKE "Leo%";
+
+SELECT first_name, last_name, age
+FROM actor;
+
+
